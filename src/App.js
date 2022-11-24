@@ -2,7 +2,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Home from './Home/Home';
 import Main from './Layout/Main';
+import CategoriesID from './Page/CategoriesID';
+import HomeCard from './Page/HomeCard';
 import Login from './Page/Login';
+import Search from './Page/Search';
 import Signup from './Page/Signup';
 function App() {
   
@@ -23,6 +26,20 @@ function App() {
           path:'/signup',
           element:<Signup></Signup>
         } ,
+        {
+          path:'/search',
+          element:<Search></Search>
+        } ,
+       
+        {
+          path:'/home',
+          element:<HomeCard></HomeCard>
+        } ,
+        {
+          path:'/categories',
+          element:<CategoriesID></CategoriesID>
+        } ,
+       
         
       ]
     },

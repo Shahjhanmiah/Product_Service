@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider';
 
 const Navar = () => {
+  const {user,logout} = useContext(AuthContext)
+  const handleLogout = () => {
+    console.log('click')
+    logout()
+      .then(() => {
+
+      })
+      .catch(err => console.log(err))
+  }
     const menuItems = <React.Fragment>
     <Link to='/home'>
       <li><a>Home</a></li>
@@ -18,7 +28,7 @@ const Navar = () => {
                       >
                       </svg>
 
-                      <button type="button" className="px-8 py-3 font-semibold rounded-full bg-orange-400">Sign Out</button>
+                      <button onClick={handleLogout} type="button" className="px-8 py-3 font-semibold rounded-full bg-orange-400">Sign Out</button>
                     </div>
                   
 
