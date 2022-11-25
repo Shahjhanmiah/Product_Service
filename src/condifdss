@@ -1,9 +1,4 @@
-import React from 'react';
-
-const Banner = () => {
-  return (
-    <div>
-      <div className>
+<div className>
  <div className="hero min-h-screen bg-black">
    <div className="hero-content flex-col lg:flex-row">
      <img src="https://i.insider.com/5dd5519779d757483b6cfb26?width=1000&format=jpeg&auto=webp" className="w-50 h-50 my-30 rounded-lg shadow-2xl" />
@@ -15,8 +10,3 @@ const Banner = () => {
    </div>
  </div>          
          </div>
-    </div>
-  );
-};
-
-export default Banner;

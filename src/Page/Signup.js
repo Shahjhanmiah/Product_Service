@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
 
+
 const Signup = () => {
 	const {createUser,updateUserProfile,verifyEmail,loding,setLoading,signInWithGoogle} = useContext(AuthContext)
   const navigate = useNavigate()
@@ -15,8 +16,7 @@ const Signup = () => {
      const image = event.target.image.files[0]
      const email = event.target.email.value
      const password = event.target.password.value
-     console.log(image,name,email,password);
-
+     console.log(image,name,email,password)
 
      // imgdb 
      const formData = new FormData()
@@ -32,6 +32,7 @@ const Signup = () => {
     // create user 
       createUser(email,password)
       .then(result=>{
+		// setAuthToken(result.user)
 		console.log(result);
 		toast.success('create user success')
         updateUserProfile(name,imageData.data.display_url)
@@ -53,13 +54,14 @@ const Signup = () => {
 
       console.log(formData)
      //4afd5aa3a3b053328a48b60685ae493f
+	//  4afd5aa3a3b053328a48b60685ae493f
     // create user 
     //  createUser(email,password).then(result=>console.log(result))
   }
   const handleGooglesigin = ()=>{
     signInWithGoogle().then(result=>{
       console.log(result)})
-     navigate(from,{replace:true})
+    navigate(from,{replace:true})
     .catch(error=>console.log(error))
 	toast.success('Google sigin success')
   }
@@ -72,11 +74,10 @@ const Signup = () => {
 					<form onSubmit={ handleSubmit} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
 						<div className="space-y-1 text-sm">
 							<label for="name" className="block dark:text-gray-400 text-white">name</label>
-							<input type="text" name="name" id="rname" placeholder="name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+							<input type="text" name="name" id="rname" placeholder="name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"required />
 						</div>
 						<div>
 							<label htmlFor='image' className='block mb-2 text-sm'>
-								Select Image:
 							</label>
 							<input
 								type='file'
@@ -88,11 +89,11 @@ const Signup = () => {
 						</div>
 						<div className="space-y-1 text-sm">
 							<label for="email" className="block dark:text-gray-400 text-white">Email</label>
-							<input type="email" name="email" id="usernemailame" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+							<input type="email" name="email" id="usernemailame" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"required/>
 						</div>
 						<div className="space-y-1 text-sm">
 							<label for="password" className="block dark:text-gray-400 text-white">Password</label>
-							<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+							<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"required />
 							<div className="flex justify-end text-xs dark:text-gray-400">
 								<a rel="noopener noreferrer text-white" href="#">Forgot Password?</a>
 							</div>

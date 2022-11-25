@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Blog from './Blog/Blog';
 import Home from './Home/Home';
 import Main from './Layout/Main';
 import CategoriesID from './Page/CategoriesID';
@@ -30,11 +31,16 @@ function App() {
           path:'/search',
           element:<Search></Search>
         } ,
-       
         {
-          path:'/home',
-          element:<HomeCard></HomeCard>
-        } ,
+          path:'blog',
+          element:<Blog></Blog>
+
+        },
+       
+        // {
+        //   path:'/home',
+        //   element:<HomeCard></HomeCard> 
+        // } ,
         {
           path:'/categories',
           element:<CategoriesID></CategoriesID>
