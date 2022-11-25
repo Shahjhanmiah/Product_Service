@@ -9,7 +9,7 @@ const Categories = ({service}) => {
 	return (
 		<div>
 			<div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
-				<Link to={'/categories'}>
+				<Link to={`/categories/${_id}`}>
 				<img src={img} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
 
 				</Link>

@@ -1,18 +1,29 @@
-import React from 'react';
+
+import { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Detailspage from './Detailspage';
 
 const CategoriesID = () => {
+    const [service, Setservices] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/homes')
+            .then(res => res.json())
+            .then(data => Setservices(data))
+    }, [])
+    
    
     return (
         <div>
-            <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100 mx-auto">
-                <img src="https://source.unsplash.com/random/300x300/?2" alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
-                <div className="flex flex-col justify-between p-6 space-y-8">
-                    <div className="space-y-2">
-                        <h2 className="text-3xl font-semibold tracking-wide">Donec lectus leo</h2>
-                        <p className="dark:text-gray-100">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
-                    </div>
-                    <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 bg-orange-300">Read more</button>
-                </div>
+            <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-20 my-20 mr-20 '>
+
+            {
+                service.map(service=><Detailspage
+                key={service._id}
+                service={service}>
+
+                </Detailspage>)
+            }
             </div>
         </div>
     );

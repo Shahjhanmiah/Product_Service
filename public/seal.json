@@ -1,14 +1,44 @@
 [
     {
         "name":"bedroom",
-        "img":"https://static7.depositphotos.com/1203063/692/i/600/depositphotos_6922612-stock-photo-modern-interior-room-with-nice.jpg"
+        "img":"https://static7.depositphotos.com/1203063/692/i/600/depositphotos_6922612-stock-photo-modern-interior-room-with-nice.jpg",
+        "productName":"badroom",
+        "location":"Sreemongal",
+        "resalPrice":4555,
+        "Selar":"shajhan",
+        "originalPrice":3344,
+        "yearofuse":"1 year",
+        "catagori":"https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=…",
+        "description":"wow there is badroom is osam",
+        "email":"shajhan@gmail.com"
+
+
+        
     },
     {
         "name":"kitchen",
-        "img":"https://www.homelane.com/blog/wp-content/uploads/2015/11/resize-800x600_20.jpg"
+        "img":"https://www.homelane.com/blog/wp-content/uploads/2015/11/resize-800x600_20.jpg",
+        "productName":"drawingroom",
+        "location":"Dhaka",
+        "resalPrice":3555,
+        "Selar":"rafi",
+        "originalPrice":2344,
+        "yearofuse":"1 year",
+        "catagori":"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-…",
+        "description":"wow there is drawigmroom is osam",
+        "email":"shajhan@gmail.com"
     },
     {
-        "name":"dining room",
-        "img":"https://jumanji.livspace-cdn.com/magazine/wp-content/uploads/sites/2/2017/05/22153047/Cover-PNG-01-1.png"
+        "name":"diningroom",
+        "img":"https://jumanji.livspace-cdn.com/magazine/wp-content/uploads/sites/2/2017/05/22153047/Cover-PNG-01-1.png",
+        "productName":"kitchen",
+        "location":"Moulivbazar",
+        "resalPrice":4500,
+        "Selar":"rafi",
+        "originalPrice":2344,
+        "yearofuse":"1 year",
+        "catagori":"https://www.build-review.com/wp-content/uploads/2021/08/Kitchen-Remodel.jpg",
+        "description":"wow there is kitchen is osam",
+        "email":"shajhan@gmail.com"
     }
 ]

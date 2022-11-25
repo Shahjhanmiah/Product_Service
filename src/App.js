@@ -42,8 +42,10 @@ function App() {
         //   element:<HomeCard></HomeCard> 
         // } ,
         {
-          path:'/categories',
-          element:<CategoriesID></CategoriesID>
+          path:'/categories/:id',
+          element:<CategoriesID></CategoriesID>,
+          loader:({params})=>fetch(`http://localhost:5000/homes/${params.id}`),
+          
         } ,
        
         
