@@ -6,9 +6,11 @@ import Main from './Layout/Main';
 import Addproduct from './Page/Addproduct';
 import Booking from './Page/Booking';
 import CategoriesID from './Page/CategoriesID';
+import Dashboard from './Page/Dashboard';
 import Detailspage from './Page/Detailspage';
 import Errorpage from './Page/Errorpage';
 import Login from './Page/Login';
+import MyProduct from './Page/MyProduct';
 import Signup from './Page/Signup';
 function App() {
   
@@ -35,9 +37,13 @@ function App() {
           element:<Addproduct></Addproduct>
         } ,
         {
-          path:'blog',
+          path:' /blog',
           element:<Blog></Blog>
 
+        },
+        {
+          path:'product',
+          element:<MyProduct></MyProduct>
         },
         
         // {
@@ -60,6 +66,21 @@ function App() {
         
       ]
     },
+    {
+      path:'/dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'/dashboard',
+          element:<Addproduct></Addproduct>
+        },
+        {
+          path:'/dashboard/product',
+          element:<MyProduct></MyProduct>
+        }
+
+      ]
+    }
 
   ]);
   return (

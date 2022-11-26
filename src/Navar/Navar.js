@@ -16,6 +16,9 @@ const Navar = () => {
     <Link to='/home'>
       <li><a>Home</a></li>
     </Link>
+    <Link to='/dashboard'>
+      <li><a>Dashboard</a></li>
+    </Link>
     <Link to='/login'>
     <button type="button" className="px-8 py-3 font-semibold rounded-full bg-orange-400">Login</button>
     </Link>
