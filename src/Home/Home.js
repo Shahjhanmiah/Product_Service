@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import Addproduct from '../Page/Addproduct';
 import Banner from '../Page/Banner';
 import Categories from '../Page/Categories';
-import Search from '../Page/Search';
+
 
 const Home = () => {
     const [service, Setservices] = useState([])
@@ -24,7 +25,7 @@ const Home = () => {
                     </Categories>)
                 }
             </div>
-            <Search></Search>
+            <Addproduct></Addproduct>
         </div>
     );
 };

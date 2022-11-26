@@ -1,8 +1,8 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Detailspage = ({service}) => {
-    const {productName,location,resalPrice,Selar,originalPrice,yearofuse,catagori,email} = service
+    const {productName,location,resalPrice,Selar,originalPrice,yearofuse,catagori,email,_id} = service
     return (
         <div>
             <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -18,7 +18,9 @@ const Detailspage = ({service}) => {
                         <p className="dark:text-gray-100">email:{email}</p>
                       
                     </div>
-                    <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-400 dark:text-gray-900">Read more</button>
+                    <Link to={`/detailspage/${_id}`}>
+                    <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-400 dark:text-gray-900">BookNow</button>
+                    </Link>
                 </div>
             </div>
 

@@ -3,10 +3,12 @@ import './App.css';
 import Blog from './Blog/Blog';
 import Home from './Home/Home';
 import Main from './Layout/Main';
+import Addproduct from './Page/Addproduct';
+import Booking from './Page/Booking';
 import CategoriesID from './Page/CategoriesID';
-import HomeCard from './Page/HomeCard';
+import Detailspage from './Page/Detailspage';
+import Errorpage from './Page/Errorpage';
 import Login from './Page/Login';
-import Search from './Page/Search';
 import Signup from './Page/Signup';
 function App() {
   
@@ -14,6 +16,7 @@ function App() {
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <Errorpage />,
       children:[
         {
           path:'/',
@@ -29,14 +32,14 @@ function App() {
         } ,
         {
           path:'/search',
-          element:<Search></Search>
+          element:<Addproduct></Addproduct>
         } ,
         {
           path:'blog',
           element:<Blog></Blog>
 
         },
-       
+        
         // {
         //   path:'/home',
         //   element:<HomeCard></HomeCard> 
@@ -47,6 +50,12 @@ function App() {
           loader:({params})=>fetch(`http://localhost:5000/homes/${params.id}`),
           
         } ,
+        {
+          path:'/detailspage/:id',
+          element:<Booking></Booking>,
+          loader:({params})=>fetch(`http://localhost:5000/homes/${params.id}`)
+          
+        }
        
         
       ]

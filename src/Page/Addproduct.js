@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../context/AuthProvider';
 
-const Search = () => {
+const Addproduct = () => {
     const { updateUserProfile } = useContext(AuthContext)
     const handleSubmit = event => {
         event.preventDefault()
@@ -120,4 +120,4 @@ const Search = () => {
     );
 };
 
-export default Search;
+export default Addproduct;
