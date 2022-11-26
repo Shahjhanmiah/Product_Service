@@ -10,7 +10,8 @@
         "yearofuse":"1 year",
         "catagori":"https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=…",
         "description":"wow there is badroom is osam",
-        "email":"shajhan@gmail.com"
+        "email":"shajhan@gmail.com",
+        "phone":"01703016457"
 
 
         
@@ -26,7 +27,8 @@
         "yearofuse":"1 year",
         "catagori":"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-…",
         "description":"wow there is drawigmroom is osam",
-        "email":"shajhan@gmail.com"
+        "email":"shajhan@gmail.com",
+        "phone":"01703016457"
     },
     {
         "name":"diningroom",
@@ -39,6 +41,7 @@
         "yearofuse":"1 year",
         "catagori":"https://www.build-review.com/wp-content/uploads/2021/08/Kitchen-Remodel.jpg",
         "description":"wow there is kitchen is osam",
-        "email":"shajhan@gmail.com"
+        "email":"shajhan@gmail.com",
+        "phone":"01703016457"
     }
 ]
