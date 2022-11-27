@@ -4,14 +4,17 @@ import Blog from './Blog/Blog';
 import Home from './Home/Home';
 import Main from './Layout/Main';
 import Addproduct from './Page/Addproduct';
+import Allsellers from './Page/Allsellers';
+import Alluser from './Page/Allsellers';
 import Booking from './Page/Booking';
 import CategoriesID from './Page/CategoriesID';
 import Dashboard from './Page/Dashboard';
-import Detailspage from './Page/Detailspage';
 import Errorpage from './Page/Errorpage';
 import Login from './Page/Login';
+import Myorders from './Page/Myorders';
 import MyProduct from './Page/MyProduct';
 import Signup from './Page/Signup';
+
 function App() {
   
   const router = createBrowserRouter([
@@ -61,7 +64,16 @@ function App() {
           element:<Booking></Booking>,
           loader:({params})=>fetch(`http://localhost:5000/homes/${params.id}`)
           
-        }
+        },
+        {
+          path:'/alluser',
+          element:<Allsellers></Allsellers>
+        },
+       
+        {
+          path:'/myorder',
+          element:<Myorders></Myorders>
+        },
        
         
       ]
@@ -77,7 +89,13 @@ function App() {
         {
           path:'/dashboard/product',
           element:<MyProduct></MyProduct>
-        }
+        },
+       
+        {
+          path:'/dashboard/myorder',
+          element:<Myorders></Myorders>
+        },
+       
 
       ]
     }

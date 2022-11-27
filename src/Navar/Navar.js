@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { FaArrowLeft, FaArrowRight, FaRegMinusSquare, FaUser } from 'react-icons/fa';
 import { AuthContext } from '../context/AuthProvider';
 
 const Navar = () => {
@@ -22,6 +23,14 @@ const Navar = () => {
     <Link to='/login'>
     <button type="button" className="px-8 py-3 font-semibold rounded-full bg-orange-400">Login</button>
     </Link>
+    <li>
+                                <Link to="/profile">
+                                    {user?.photoURL ?
+                                        <img className='' style={{ height: '45px' }} roundedCircle src={user?.photoURL}></img>
+                                        : <FaArrowRight></FaArrowRight>
+                                    }
+                                </Link>
+                            </li>
     <div className='flex items-center cursor-pointer  text-gray-600 capitalize transition-colors  hover:bg-gray-100 '>
                       <svg
                         className='w-5 h-5 mx-1'
