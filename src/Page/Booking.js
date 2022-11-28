@@ -18,6 +18,7 @@ const Booking = () => {
             phone,
             _id
          }
+         // booking er data  load 
          console.log(booking)
          fetch('http://localhost:5000/book', {
             method: 'POST',
@@ -32,7 +33,6 @@ const Booking = () => {
                 if (data.acknowledged) {
 
                     toast.success('booking confirmed');
-
                 }
                 else {
                     toast.error(data.message);
