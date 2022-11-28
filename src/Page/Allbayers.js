@@ -52,5 +52,6 @@ const Allbayers = () => {
         </div>
     );
 };
+// allbayers
 
 export default Allbayers;
