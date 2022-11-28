@@ -26,6 +26,9 @@ const Dashboard = () => {
                        <Link to='/myorder'>
                         <li><a>Myorders</a></li>
                        </Link>
+                       <Link to='/allselar'>
+                        <li><a>Allbayers</a></li>
+                       </Link>
                         
 
                     </ul>

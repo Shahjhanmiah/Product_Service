@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Addproduct from '../Page/Addproduct';
+import Advertise from '../Page/Advertise';
 import Banner from '../Page/Banner';
 import Categories from '../Page/Categories';
 
@@ -26,6 +27,7 @@ const Home = () => {
                 }
             </div>
             <Addproduct></Addproduct>
+            <Advertise></Advertise>
         </div>
     );
 };

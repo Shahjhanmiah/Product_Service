@@ -1,7 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
+import useToken, { setAuthToken } from '../hook/useToken';
+
 
 
 const Signup = () => {
@@ -9,6 +11,17 @@ const Signup = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
+  const [createUserEmail,setUserEmail] = useState('')
+  const [token] = useToken(createUserEmail)
+  
+
+  if(token){
+	  navigate('/')
+  }
+  if (loding) {
+    return <div>Loading ---</div>
+  }
+
 
   const handleSubmit = event=>{
      event.preventDefault()
@@ -17,6 +30,7 @@ const Signup = () => {
      const email = event.target.email.value
      const password = event.target.password.value
      console.log(image,name,email,password)
+
 
      // imgdb 
      const formData = new FormData()
@@ -32,9 +46,11 @@ const Signup = () => {
     // create user 
       createUser(email,password)
       .then(result=>{
+		// setAuthToken(result.user)
 		console.log(result);
 		toast.success('create user success')
         updateUserProfile(name,imageData.data.display_url)
+		saveUser(name,email)
         .then(
           verifyEmail().then(()=>{
             toast.success('please cheak your email verifay')
@@ -57,13 +73,48 @@ const Signup = () => {
     // create user 
     //  createUser(email,password).then(result=>console.log(result))
   }
+  
   const handleGooglesigin = ()=>{
     signInWithGoogle().then(result=>{
       console.log(result)})
     navigate(from,{replace:true})
     .catch(error=>console.log(error))
 	toast.success('Google sigin success')
+
+
+
+	
   }
+  const saveUser = (name, email) =>{
+	const user ={name, email};
+	fetch('http://localhost:5000/users', {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json'
+		},
+		body: JSON.stringify(user)
+	})
+	.then(res => res.json())
+	.then(result =>{
+		console.log(result);
+		setUserEmail(email);
+	})
+
+
+	// const getUserToken = email =>{
+
+    //         fetch(`http://localhost:5000/jwt?email=${email}`)
+    //         .then(res=>res.json())
+    //         .then(data=>{
+    //             if(data.accessToken){
+    //                 localStorage.setItem('accessToken',data.accessToken)
+    //                 navigate('/')
+    //             }
+    //         })
+    //     }
+}
+
+  
 
 	return (
 		<div>

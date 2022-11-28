@@ -16,6 +16,7 @@ const Detailspage = ({service}) => {
                         <p className="dark:text-gray-100">SelarNmae:{Selar}</p>
                         <p className="dark:text-gray-100">yearofuse:{yearofuse}</p>
                         <p className="dark:text-gray-100">email:{email}</p>
+                        
                       
                     </div>
                     <Link to={`/detailspage/${_id}`}>

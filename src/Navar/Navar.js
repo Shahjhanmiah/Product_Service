@@ -17,17 +17,28 @@ const Navar = () => {
     <Link to='/home'>
       <li><a>Home</a></li>
     </Link>
+   
     <Link to='/dashboard'>
       <li><a>Dashboard</a></li>
+      
     </Link>
-    <Link to='/login'>
-    <button type="button" className="px-8 py-3 font-semibold rounded-full bg-orange-400">Login</button>
-    </Link>
+     {user?.uid ?
+      <>
+        
+        <li> <button onClick={handleLogout} type="button" className="px-8 py-3 font-semibold rounded-full bg-orange-400">Sign Out</button></li>
+
+      </>
+      :
+      <Link to='/login'>
+      <button type="button" className="px-8 py-3 font-semibold rounded-full bg-orange-400">Login</button>
+      </Link>
+    }
+   
     <li>
                                 <Link to="/profile">
                                     {user?.photoURL ?
                                         <img className='' style={{ height: '45px' }} roundedCircle src={user?.photoURL}></img>
-                                        : <FaArrowRight></FaArrowRight>
+                                        : <div>loading</div>
                                     }
                                 </Link>
                             </li>
@@ -40,7 +51,6 @@ const Navar = () => {
                       >
                       </svg>
 
-                      <button onClick={handleLogout} type="button" className="px-8 py-3 font-semibold rounded-full bg-orange-400">Sign Out</button>
                     </div>
                   
 

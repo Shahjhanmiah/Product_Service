@@ -1,35 +1,40 @@
+import { data } from 'autoprefixer';
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
+import useToken, { setAuthToken } from '../hook/useToken';
 
 const Login = () => {
 	const { signin, loding, setLoading, signInWithGoogle, resetPassword } = useContext(AuthContext)
 	const [userEmail, setUserEmail] = useState('')
 	const navigate = useNavigate()
 	const location = useLocation()
+	const [loginUserEmail, setLoginUserEmail] = useState('');
 	const from = location.state?.from?.pathname || '/'
+
+	
 	const handleSubmit = event => {
 		event.preventDefault()
 		const email = event.target.email.value
 		const password = event.target.password.value
-		
-
 		signin(email, password)
 			.then(result => {
 				console.log(result);
 				// setAuthToken(result.user)
+				setLoginUserEmail(data.email);
 				navigate(from, { replace: true })
 				toast.success('login success')
 			})
 			.catch(error => {
 				console.log(error)
+				
 				toast.error('please cheack your error')
 			})
 	}
 	const handleGooglesigin = () => {
 		signInWithGoogle().then(result => {
-			//  setAuthToken(result.user)
+			// setAuthToken(result.user)
 			toast.success('Google singin success')
 		}).catch(error => {
 			console.log(error)

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
 
 const MyProduct = () => {
@@ -9,15 +10,17 @@ const MyProduct = () => {
     const [product, setProduct] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/homes?email=shajhan@gmail.com')
+        
             .then(res => res.json())
             .then(data => setProduct(data))
 
     }, [])
     const handledelete = id => {
         fetch(`http://localhost:5000/homes/${id}`,{
+            
             method:'Delete',
-            // headers: {
-            //     // authorization: `bearer ${localStorage.getItem('accessToken')}`
+            //  headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
             // }
         })
             .then(res => res.json())
@@ -31,7 +34,7 @@ const MyProduct = () => {
     }
     return (
         <div>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto bg-slate-400">
                 <table className="table w-full">
                     <thead>
                         <tr>
@@ -41,7 +44,8 @@ const MyProduct = () => {
                             <th>reselPrice</th>
                             <th>phone</th>
                             <th>eamil</th>
-                            <th>Payment</th>
+                            <th>fire</th>
+                            <th>Advertise</th>
 
 
                         </tr>
@@ -56,11 +60,12 @@ const MyProduct = () => {
                                 <td>{product.resalPrice}</td>
                                 <td>{product.phone}</td>
                                 <td>{product.email}</td>
-                                {/* <td><button onClick={() =>handledelete(homes.id)} className='bg-orange-500 text-3xl'>advertise</button></td> */}
-                                <td><button onClick={() =>handledelete(homes._id)}  className="btn btn-outline btn-warning">Delete</button></td>
+                                <td></td>
+                                <td><small className='text-orange-300'>advertise</small></td>
+                               
                                 <td>
 
-
+                                <td><button  className="btn btn-outline btn-primary">Advertise</button></td>
                                 </td>
                             </tr>)
                         }

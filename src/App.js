@@ -4,6 +4,8 @@ import Blog from './Blog/Blog';
 import Home from './Home/Home';
 import Main from './Layout/Main';
 import Addproduct from './Page/Addproduct';
+import Advertisedetails from './Page/Advertisedetails';
+import Allbayers from './Page/Allbayers';
 import Allsellers from './Page/Allsellers';
 import Alluser from './Page/Allsellers';
 import Booking from './Page/Booking';
@@ -13,6 +15,7 @@ import Errorpage from './Page/Errorpage';
 import Login from './Page/Login';
 import Myorders from './Page/Myorders';
 import MyProduct from './Page/MyProduct';
+import Payment from './Page/Payment';
 import Signup from './Page/Signup';
 
 function App() {
@@ -40,12 +43,28 @@ function App() {
           element:<Addproduct></Addproduct>
         } ,
         {
+          path:'/allselar',
+          element:<Allbayers></Allbayers>
+        } ,
+        {
           path:' /blog',
           element:<Blog></Blog>
 
         },
+
         {
-          path:'product',
+          path:' /payment',
+          element:<Payment></Payment>
+
+        },
+        {
+          path:' /addver',
+          element:<Advertisedetails></Advertisedetails>
+          
+
+        },
+        {
+          path:'/product',
           element:<MyProduct></MyProduct>
         },
         
@@ -59,6 +78,7 @@ function App() {
           loader:({params})=>fetch(`http://localhost:5000/homes/${params.id}`),
           
         } ,
+
         {
           path:'/detailspage/:id',
           element:<Booking></Booking>,
@@ -94,6 +114,14 @@ function App() {
         {
           path:'/dashboard/myorder',
           element:<Myorders></Myorders>
+        },
+        {
+          path:'/dashboard/product',
+          element:<MyProduct></MyProduct>
+        },
+        {
+          path:'/dashboard/allselar',
+          element:<Allbayers></Allbayers>
         },
        
 
