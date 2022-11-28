@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './Blog/Blog';
+import PrivateRoute from './context/PrivateRoute';
 import Home from './Home/Home';
 import Main from './Layout/Main';
 import Addproduct from './Page/Addproduct';
@@ -15,7 +16,7 @@ import Errorpage from './Page/Errorpage';
 import Login from './Page/Login';
 import Myorders from './Page/Myorders';
 import MyProduct from './Page/MyProduct';
-import Payment from './Page/Payment';
+import Payment from './Page/Create';
 import Signup from './Page/Signup';
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
         } ,
         {
           path:'/allselar',
-          element:<Allbayers></Allbayers>
+          element:<PrivateRoute><Allbayers></Allbayers></PrivateRoute>
         } ,
         {
           path:' /blog',
@@ -113,7 +114,7 @@ function App() {
        
         {
           path:'/dashboard/myorder',
-          element:<Myorders></Myorders>
+          element:<PrivateRoute><Dashboard><Myorders></Myorders></Dashboard></PrivateRoute>
         },
         {
           path:'/dashboard/product',
@@ -122,6 +123,10 @@ function App() {
         {
           path:'/dashboard/allselar',
           element:<Allbayers></Allbayers>
+        },
+        {
+          path:'/dashboard/allselar',
+          element:<PrivateRoute><Allsellers></Allsellers></PrivateRoute>
         },
        
 

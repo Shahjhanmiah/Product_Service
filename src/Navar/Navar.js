@@ -38,7 +38,7 @@ const Navar = () => {
                                 <Link to="/profile">
                                     {user?.photoURL ?
                                         <img className='' style={{ height: '45px' }} roundedCircle src={user?.photoURL}></img>
-                                        : <div>loading</div>
+                                        : <FaArrowLeft></FaArrowLeft>
                                     }
                                 </Link>
                             </li>

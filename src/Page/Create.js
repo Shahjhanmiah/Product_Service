@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Payment = () => {
+const Create = () => {
     return (
         <div>
-            
+          
         </div>
     );
 };
 
-export default Payment;
+export default Create;
