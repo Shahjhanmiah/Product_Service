@@ -87,7 +87,7 @@ const Signup = () => {
   }
   const saveUser = (name, email) =>{
 	const user ={name, email};
-	fetch('http://localhost:5000/users', {
+	fetch('https://server-swart-nine.vercel.app/users', {
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json'
@@ -103,7 +103,7 @@ const Signup = () => {
 
 	// const getUserToken = email =>{
 
-    //         fetch(`http://localhost:5000/jwt?email=${email}`)
+    //         fetch(`https://server-swart-nine.vercel.app/jwt?email=${email}`)
     //         .then(res=>res.json())
     //         .then(data=>{
     //             if(data.accessToken){

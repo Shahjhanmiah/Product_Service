@@ -5,7 +5,7 @@ const Advertise = () => {
     const [service, Setservices] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/homes')
+        fetch('https://server-swart-nine.vercel.app/homes')
             .then(res => res.json())
             .then(data => Setservices(data))
     }, [])

@@ -5,7 +5,7 @@ const Allbayers = () => {
     const {user} = useContext(AuthContext)
     const [users,serUsers] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/allbayers')
+        fetch('https://server-swart-nine.vercel.app/allbayers')
         .then(res=>res.json())
         .then(data=>serUsers(data))
     },[])

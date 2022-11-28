@@ -20,7 +20,7 @@ const Booking = () => {
          }
          // booking er data  load 
          console.log(booking)
-         fetch('http://localhost:5000/book', {
+         fetch('https://server-swart-nine.vercel.app/book', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

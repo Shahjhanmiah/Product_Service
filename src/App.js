@@ -76,14 +76,14 @@ function App() {
         {
           path:'/categories/:id',
           element:<CategoriesID></CategoriesID>,
-          loader:({params})=>fetch(`http://localhost:5000/homes/${params.id}`),
+          loader:({params})=>fetch(`https://server-swart-nine.vercel.app/homes/${params.id}`),
           
         } ,
 
         {
           path:'/detailspage/:id',
           element:<Booking></Booking>,
-          loader:({params})=>fetch(`http://localhost:5000/homes/${params.id}`)
+          loader:({params})=>fetch(`https://server-swart-nine.vercel.app/homes/${params.id}`)
           
         },
         {

@@ -9,14 +9,14 @@ const MyProduct = () => {
     const {homes} = useContext(AuthContext)
     const [product, setProduct] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/homes?email=shajhan@gmail.com')
+        fetch('https://server-swart-nine.vercel.app/homes?email=shajhan@gmail.com')
         
             .then(res => res.json())
             .then(data => setProduct(data))
 
     }, [])
     const handledelete = id => {
-        fetch(`http://localhost:5000/homes/${id}`,{
+        fetch(`https://server-swart-nine.vercel.app/homes/${id}`,{
             
             method:'Delete',
             //  headers: {
