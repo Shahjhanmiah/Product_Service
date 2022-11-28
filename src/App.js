@@ -88,12 +88,12 @@ function App() {
         },
         {
           path:'/alluser',
-          element:<Allsellers></Allsellers>
+          element:<PrivateRoute><Allsellers></Allsellers></PrivateRoute>
         },
        
         {
           path:'/myorder',
-          element:<Myorders></Myorders>
+          element:<PrivateRoute><Myorders></Myorders></PrivateRoute>
         },
        
         
