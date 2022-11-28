@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const Detailspage = ({service}) => {
-    const {productName,location,resalPrice,Selar,originalPrice,yearofuse,catagori,email,_id} = service
+    const {productName,location,resalPrice,Selar,originalPrice,yearofuse,catagori,email,_id,description} = service
     return (
         <div>
             <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -16,6 +16,7 @@ const Detailspage = ({service}) => {
                         <p className="dark:text-gray-100">SelarNmae:{Selar}</p>
                         <p className="dark:text-gray-100">yearofuse:{yearofuse}</p>
                         <p className="dark:text-gray-100">email:{email}</p>
+                        <p className="dark:text-gray-100">description:{description}</p>
                         
                       
                     </div>
